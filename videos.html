@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vídeos sobre Acessibilidade</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="acessibilidade.html">Acessibilidade</a></li>
+                <li><a href="graficos.html">Gráficos sobre Acessibilidade</a></li>
+                <li><a href="videos.html">Videos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+        <div id="acessibilidade-controles">
+            <button id="aumentar-fonte-btn">Aumentar a fonte</button>
+            <button id="diminuir-fonte-btn">Diminuir a fonte</button>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2>A importância da Acessibilidade</h2>
+            <p>Acessibilidade é fundamental para garantir que todas as pessoas, independentemente de suas limitações físicas ou cognitivas, possam acessar e participar ativamente da sociedade. Isso inclui o acesso à educação, transporte, serviços públicos, e ao conteúdo digital. Neste contexto, a promoção de práticas acessíveis é crucial para a inclusão social e para a eliminação de barreiras que possam limitar a autonomia e a participação plena de todos.</p>
+        </section>
+
+        <section>
+            <h2>Vídeos Educativos sobre Acessibilidade</h2>
+            <p>Aqui estão dois vídeos que abordam a importância da acessibilidade e como ela pode transformar a vida das pessoas com deficiência:</p>
+
+            <!-- Div para os vídeos -->
+            <div class="videos-container">
+                <!-- Vídeo 1 -->
+                <div class="video-item">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/EAOsjmvqJ5A?si=VQXUA1Zsa4kPdnMD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <!-- Vídeo 2 -->
+                <div class="video-item">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/PhqmoYmtPZ0?si=Nhx3oMO6mzr6yhWr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 TDE Programação Web - Eduardo Michelin</p>
+    </footer>
+    <script>
+        const body = document.body;
+        let fontSize = 16; // Tamanho inicial da fonte em pixels
+    
+        const aumentarFonte = () => {
+            if (fontSize < 24) { // Limite máximo de aumento
+                fontSize += 2;
+                body.style.fontSize = fontSize + "px";
+            }
+        };
+    
+        const diminuirFonte = () => {
+            if (fontSize > 12) { // Limite mínimo de redução
+                fontSize -= 2;
+                body.style.fontSize = fontSize + "px";
+            }
+        };
+    
+        document.getElementById("aumentar-fonte-btn").addEventListener("click", aumentarFonte);
+        document.getElementById("diminuir-fonte-btn").addEventListener("click", diminuirFonte);
+    </script>
+</body>
+
+</html>

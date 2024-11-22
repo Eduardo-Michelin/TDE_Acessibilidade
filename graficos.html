@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acessibilidade</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="acessibilidade.html">Acessibilidade</a></li>
+                <li><a href="graficos.html">Gráficos sobre Acessibilidade</a></li>
+                <li><a href="videos.html">Videos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+        <div id="acessibilidade-controles">
+            <button id="aumentar-fonte-btn">Aumentar a fonte</button>
+            <button id="diminuir-fonte-btn">Diminuir a fonte</button>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2>Pessoas com deficiência nas escolas</h2>
+            <div class="grafico-container">
+                <div class="grafico">
+                    <img src="acessibilidade1.jpg" alt="Gráfico de Acessibilidade no Brasil">
+                </div>
+                <div class="grafico-texto">
+                    <p>O gráfico "Pessoas com deficiência nas escolas" mostra a distribuição de alunos com diferentes deficiências em instituições educacionais, destacando a inclusão e os tipos de apoio disponíveis. Ele reflete o progresso e os desafios na acessibilidade e adaptação das escolas para esses estudantes. Essa análise ajuda a identificar áreas que precisam de mais recursos e melhorias nas políticas educacionais.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Pessoas com deficiência separadas por idade</h2>
+            <div class="grafico-container">
+                <div class="grafico">
+                    <img src="acessibilidade2.png" alt="Gráfico de Acessibilidade no Mundo">
+                </div>
+                <div class="grafico-texto">
+                    <p>O gráfico "Pessoas com deficiência separadas por idade" apresenta a distribuição de indivíduos com deficiência em diferentes faixas etárias. Ele revela como a prevalência de deficiências varia ao longo da vida, destacando as necessidades específicas de cada grupo etário. Esse gráfico é essencial para compreender as mudanças nas condições de acessibilidade e suporte ao longo da vida das pessoas com deficiência.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Matrículas de PCD em Escolas Regulares</h2>
+            <div class="grafico-container">
+                <div class="grafico">
+                    <img src="acessibilidade3.png" alt="Gráfico de Acessibilidade no Mundo">
+                </div>
+                <div class="grafico-texto">
+                    <p>O gráfico "Matrículas de PCD em Escolas Regulares" mostra a quantidade de estudantes com deficiência matriculados em escolas regulares ao longo dos anos. Ele destaca a evolução da inclusão dessas pessoas no sistema educacional, refletindo o impacto de políticas de acessibilidade e inclusão. Esse gráfico é crucial para avaliar o sucesso das iniciativas de integração e identificar áreas que ainda precisam de aprimoramento.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 TDE Programação Web - Eduardo Michelin</p>
+    </footer>
+    <script>
+        const body = document.body;
+        let fontSize = 16; // Tamanho inicial da fonte em pixels
+    
+        const aumentarFonte = () => {
+            if (fontSize < 24) { // Limite máximo de aumento
+                fontSize += 2;
+                body.style.fontSize = fontSize + "px";
+            }
+        };
+    
+        const diminuirFonte = () => {
+            if (fontSize > 12) { // Limite mínimo de redução
+                fontSize -= 2;
+                body.style.fontSize = fontSize + "px";
+            }
+        };
+    
+        document.getElementById("aumentar-fonte-btn").addEventListener("click", aumentarFonte);
+        document.getElementById("diminuir-fonte-btn").addEventListener("click", diminuirFonte);
+    </script>
+</body>
+</html>

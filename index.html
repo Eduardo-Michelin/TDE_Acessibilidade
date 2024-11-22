@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acessibilidade</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="acessibilidade.html">Acessibilidade</a></li>
+                <li><a href="graficos.html">Gráficos sobre Acessibilidade</a></li>
+                <li><a href="videos.html">Videos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+        <div id="acessibilidade-controles">
+            <button id="aumentar-fonte-btn">Aumentar a fonte</button>
+            <button id="diminuir-fonte-btn">Diminuir a fonte</button>
+        </div>
+    </header>
+    
+    
+    <main>
+        <section id="home">
+            <h2>Bem-vindo</h2>
+            <p>Descubra mais sobre acessibilidade e como ela pode melhorar a experiência de todos na web.</p>
+        </section>
+        
+        <section id="o-que-e-acessibilidade">
+            <h2>O que é Acessibilidade?</h2>
+            <p>Acessibilidade digital garante que todos, incluindo pessoas com deficiência, possam usar a web de forma eficaz.</p>
+        </section>
+        
+        <section id="dadosacessibilidade">
+            <h2>Dados</h2>
+            <p>Aproximadamente 1 bilhão de pessoas no mundo vivem com alguma forma de deficiência.</p>
+        </section>
+        
+        <section id="videos">
+            <h2>Videos</h2>
+            <p>Ajuste as configurações para personalizar sua experiência na web.</p>
+        </section>
+    </main>
+    
+    <footer>
+        <p>© 2024 TDE Programação Web - Eduardo Michelin</p>
+    </footer>
+    <script>
+        const body = document.body;
+        let fontSize = 16; // Tamanho inicial da fonte em pixels
+    
+        const aumentarFonte = () => {
+            if (fontSize < 24) { // Limite máximo de aumento
+                fontSize += 2;
+                body.style.fontSize = fontSize + "px";
+            }
+        };
+    
+        const diminuirFonte = () => {
+            if (fontSize > 12) { // Limite mínimo de redução
+                fontSize -= 2;
+                body.style.fontSize = fontSize + "px";
+            }
+        };
+    
+        document.getElementById("aumentar-fonte-btn").addEventListener("click", aumentarFonte);
+        document.getElementById("diminuir-fonte-btn").addEventListener("click", diminuirFonte);
+    </script>
+</body>
+</html>
