@@ -6,21 +6,31 @@
     <title>Acessibilidade</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    
+
+<body>    
     <header>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="acessibilidade.html">Acessibilidade</a></li>
+                <li><a href="importancia.html" class="active">Importância</a></li>
+                <li><a href="tabelas.html">Tabelas sobre Acessibilidade</a></li>
                 <li><a href="graficos.html">Gráficos sobre Acessibilidade</a></li>
                 <li><a href="videos.html">Videos</a></li>
                 <li><a href="contato.html">Contato</a></li>
             </ul>
         </nav>
         <div id="acessibilidade-controles">
+            <button id="reset-btn">Reset</button>
+            <button id="daltonismo-btn">Daltonismo</button>
             <button id="aumentar-fonte-btn">Aumentar a fonte</button>
             <button id="diminuir-fonte-btn">Diminuir a fonte</button>
+        </div>
+        <div id="opcoes-daltonismo" class="oculto">
+            <button class="cor-opcao" data-cor="opcao-1">Opção 1</button>
+            <button class="cor-opcao" data-cor="opcao-2">Opção 2</button>
+            <button class="cor-opcao" data-cor="opcao-3">Opção 3</button>
+            <button class="cor-opcao" data-cor="opcao-4">Opção 4</button>
+            <button class="cor-opcao" data-cor="opcao-5">Opção 5</button>
         </div>
     </header>
 
@@ -66,25 +76,60 @@
         <p>© 2024 TDE Programação Web - Eduardo Michelin</p>
     </footer>
     <script>
+        const daltonismoBtn = document.getElementById('daltonismo-btn');
+        const opcoesDaltonismo = document.getElementById('opcoes-daltonismo');
+
+
+        daltonismoBtn.addEventListener('click', () => {
+            console.log("Botão de Daltonismo clicado");
+            opcoesDaltonismo.classList.toggle('oculto');
+        });
+
+
+        const opcoes = document.querySelectorAll('.cor-opcao');
+
+
+        opcoes.forEach(opcao => {
+            opcao.addEventListener('click', () => {
+                const cor = opcao.getAttribute('data-cor');
+                document.body.classList.remove('opcao-1', 'opcao-2', 'opcao-3', 'opcao-4', 'opcao-5');
+                document.body.classList.add(cor);
+            });
+        });
+
         const body = document.body;
-        let fontSize = 16; // Tamanho inicial da fonte em pixels
-    
+        let fontSize = 16;
+
+
         const aumentarFonte = () => {
-            if (fontSize < 24) { // Limite máximo de aumento
+            if (fontSize < 24) {
                 fontSize += 2;
                 body.style.fontSize = fontSize + "px";
             }
         };
-    
+
+
         const diminuirFonte = () => {
-            if (fontSize > 12) { // Limite mínimo de redução
+            if (fontSize > 12) {
                 fontSize -= 2;
                 body.style.fontSize = fontSize + "px";
             }
         };
-    
+
         document.getElementById("aumentar-fonte-btn").addEventListener("click", aumentarFonte);
         document.getElementById("diminuir-fonte-btn").addEventListener("click", diminuirFonte);
+
+
+        const resetBtn = document.getElementById('reset-btn');
+
+        resetBtn.addEventListener('click', () => {
+
+            document.body.classList.remove('opcao-1', 'opcao-2', 'opcao-3', 'opcao-4', 'opcao-5');
+            
+
+            document.body.style.fontSize = '';
+            
+        });
     </script>
 </body>
 </html>

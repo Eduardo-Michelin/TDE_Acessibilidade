@@ -11,64 +11,100 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="acessibilidade.html">Acessibilidade</a></li>
+                <li><a href="importancia.html">Importância</a></li>
+                <li><a href="tabelas.html">Tabelas sobre Acessibilidade</a></li>
                 <li><a href="graficos.html">Gráficos sobre Acessibilidade</a></li>
                 <li><a href="videos.html">Videos</a></li>
                 <li><a href="contato.html">Contato</a></li>
             </ul>
         </nav>
         <div id="acessibilidade-controles">
+            <button id="reset-btn">Reset</button>
+            <button id="daltonismo-btn">Daltonismo</button>
             <button id="aumentar-fonte-btn">Aumentar a fonte</button>
             <button id="diminuir-fonte-btn">Diminuir a fonte</button>
         </div>
+        <div id="opcoes-daltonismo" class="oculto">
+            <button class="cor-opcao" data-cor="opcao-1">Opção 1</button>
+            <button class="cor-opcao" data-cor="opcao-2">Opção 2</button>
+            <button class="cor-opcao" data-cor="opcao-3">Opção 3</button>
+            <button class="cor-opcao" data-cor="opcao-4">Opção 4</button>
+            <button class="cor-opcao" data-cor="opcao-5">Opção 5</button>
+        </div>
     </header>
-    
     
     <main>
         <section id="home">
-            <h2>Bem-vindo</h2>
-            <p>Descubra mais sobre acessibilidade e como ela pode melhorar a experiência de todos na web.</p>
+            <h2>Objetivo</h2>
+            <p>Este site foi criado com o objetivo de fornecer informações sobre acessibilidade digital e como ela pode melhorar a experiência de todos na web. O foco é sensibilizar e educar sobre a importância de criar ambientes digitais inclusivos, que possam ser utilizados por pessoas com diferentes necessidades.</p>
         </section>
         
         <section id="o-que-e-acessibilidade">
             <h2>O que é Acessibilidade?</h2>
-            <p>Acessibilidade digital garante que todos, incluindo pessoas com deficiência, possam usar a web de forma eficaz.</p>
+            <p>Acessibilidade digital busca garantir que todas as pessoas, independentemente de suas limitações físicas ou cognitivas, possam acessar e interagir com os conteúdos e serviços online. Isso inclui tornar os sites, aplicativos e plataformas mais fáceis de navegar, tanto para pessoas com deficiência quanto para qualquer usuário que precise de ajustes personalizados.</p>
         </section>
         
         <section id="dadosacessibilidade">
-            <h2>Dados</h2>
-            <p>Aproximadamente 1 bilhão de pessoas no mundo vivem com alguma forma de deficiência.</p>
+            <h2>Importância da Acessibilidade</h2>
+            <p>Aproximadamente 1 bilhão de pessoas no mundo vivem com alguma forma de deficiência. Esse dado sublinha a necessidade urgente de tornar a web mais inclusiva. A acessibilidade digital não é apenas uma questão de conformidade legal, mas um passo essencial para criar uma internet mais equitativa para todos.</p>
         </section>
         
-        <section id="videos">
-            <h2>Videos</h2>
-            <p>Ajuste as configurações para personalizar sua experiência na web.</p>
+        <section id="personalizacao">
+            <h2>Personalização de Experiência</h2>
+            <p>O site oferece opções de personalização para facilitar a navegação, como ajuste de fontes e a implementação de diferentes modos de daltonismo. Essas funcionalidades permitem que você adapte a página de acordo com suas necessidades, proporcionando uma experiência mais agradável e acessível.</p>
+            <p>O botão "Reset" é pode ser usado para cancelar as alerações feitas pelos outros botões.</p>
         </section>
     </main>
     
     <footer>
         <p>© 2024 TDE Programação Web - Eduardo Michelin</p>
     </footer>
-    <script>
-        const body = document.body;
-        let fontSize = 16; // Tamanho inicial da fonte em pixels
     
+    <script>
+        const daltonismoBtn = document.getElementById('daltonismo-btn');
+        const opcoesDaltonismo = document.getElementById('opcoes-daltonismo');
+
+        daltonismoBtn.addEventListener('click', () => {
+            console.log("Botão de Daltonismo clicado");
+            opcoesDaltonismo.classList.toggle('oculto');
+        });
+
+        const opcoes = document.querySelectorAll('.cor-opcao');
+
+        opcoes.forEach(opcao => {
+            opcao.addEventListener('click', () => {
+                const cor = opcao.getAttribute('data-cor');
+                document.body.classList.remove('opcao-1', 'opcao-2', 'opcao-3', 'opcao-4', 'opcao-5');
+                document.body.classList.add(cor);
+            });
+        });
+
+        const body = document.body;
+        let fontSize = 16;
+
         const aumentarFonte = () => {
-            if (fontSize < 24) { // Limite máximo de aumento
+            if (fontSize < 24) {
                 fontSize += 2;
                 body.style.fontSize = fontSize + "px";
             }
         };
-    
+
         const diminuirFonte = () => {
-            if (fontSize > 12) { // Limite mínimo de redução
+            if (fontSize > 12) {
                 fontSize -= 2;
                 body.style.fontSize = fontSize + "px";
             }
         };
-    
+
         document.getElementById("aumentar-fonte-btn").addEventListener("click", aumentarFonte);
         document.getElementById("diminuir-fonte-btn").addEventListener("click", diminuirFonte);
+
+        const resetBtn = document.getElementById('reset-btn');
+
+        resetBtn.addEventListener('click', () => {
+            document.body.classList.remove('opcao-1', 'opcao-2', 'opcao-3', 'opcao-4', 'opcao-5');
+            document.body.style.fontSize = '';
+        });
     </script>
 </body>
 </html>

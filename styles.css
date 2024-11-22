@@ -1,27 +1,29 @@
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Configuração geral */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #e8f5e9; /* Verde claro */
+    background-color: #e8f5e9; 
     color: #333;
-    margin: 0;
+    font-size: 16px; 
 }
 
-/* Cabeçalho */
 header {
-    background-color: #43a047; /* Cor de fundo verde escuro */
+    background-color: #43a047; 
     padding: 10px 20px;
-    text-align: center; /* Centraliza o conteúdo horizontalmente */
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
 }
 
 nav {
+    display: flex; 
+    justify-content: flex-start; 
+    width: 100%; 
     margin-top: 5px;
     margin-bottom: 5px;
 }
@@ -31,28 +33,126 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: center; /* Centraliza os itens na barra de navegação */
+    justify-content: flex-start; 
 }
 
 nav ul li {
-    margin: 0 15px; /* Adiciona espaçamento entre os itens */
+    margin-right: 15px; 
 }
 
 nav ul li a {
     text-decoration: none;
     color: #fff;
     padding: 8px 15px;
-    background-color: transparent; /* Fundo transparente para os botões */
-    border: none; /* Remove a borda dos botões */
-    border-radius: 5px; /* Bordas arredondadas */
-    transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
+    background-color: transparent; 
+    border: none; 
+    border-radius: 5px; 
+    transition: background-color 0.3s ease; 
 }
 
 nav ul li a:hover {
-    background-color: #2e7d32; /* Cor de fundo verde mais intenso ao passar o mouse */
+    background-color: #2e7d32; 
 }
 
-/* Seções principais */
+#acessibilidade-controles {
+    position: fixed;
+    top: 10px; 
+    right: 10px; 
+    display: flex;
+    gap: 10px; 
+}
+
+#acessibilidade-controles button {
+    background-color: #43a047; 
+    color: #fff; 
+    border: none; 
+    padding: 10px 15px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+    font-size: 16px; 
+    transition: background-color 0.3s ease; 
+}
+
+#acessibilidade-controles button:hover {
+    background-color: #2e7d32; 
+}
+
+#opcoes-daltonismo {
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    gap: 5px;
+}
+
+.oculto {
+    display: none;
+}
+
+#opcoes-daltonismo button {
+    background-color: #43a047; 
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#opcoes-daltonismo button:hover {
+    background-color: #2e7d32; 
+}
+
+.opcao-1 {
+    background-color: #ffffff; 
+    color: #000000; 
+}
+
+.opcao-1 a {
+    color: #00796b; 
+}
+
+.opcao-2 {
+    background-color: #1565c0; 
+    color: #ffffff; 
+}
+
+.opcao-2 a {
+    color: #ffeb3b; 
+}
+
+.opcao-3 {
+    background-color: #388e3c; 
+    color: #ffffff; 
+}
+
+.opcao-3 a {
+    color: #ffeb3b; 
+}
+
+.opcao-4 {
+    background-color: #fbc02d; 
+    color: #000000; 
+}
+
+.opcao-4 a {
+    color: #d32f2f; 
+}
+
+.opcao-5 {
+    background-color: #000000; 
+    color: #ffffff; 
+}
+
+.opcao-5 a {
+    color: #ffeb3b; 
+}
+
 main {
     padding: 20px;
 }
@@ -60,24 +160,33 @@ main {
 main section {
     margin-bottom: 30px;
     padding: 20px;
-    background-color: #ffffff; /* Fundo branco para contraste */
-    border: 1px solid #c8e6c9; /* Borda verde claro */
+    background-color: #ffffff; 
+    border: 1px solid #c8e6c9; 
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 main section h2 {
     margin-bottom: 10px;
-    font-size: 20px;
-    color: #2e7d32; /* Verde escuro */
+    font-size: 22px;
+    color: #2e7d32; 
 }
 
-/* Estilo para as seções de gráfico */
+#tipos-de-deficiencia ul {
+    margin-top: 10px;
+}
+
+#tipos-de-deficiencia ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
 .grafico-container {
     display: flex;
     align-items: center;
     margin-top: 20px;
-    justify-content: flex-start; /* Alinha o conteúdo à esquerda */
+    justify-content: flex-start; 
 }
 
 .grafico {
@@ -85,106 +194,76 @@ main section h2 {
 }
 
 .grafico img {
-    width: 350px; /* Ajusta o tamanho do gráfico */
-    height: auto; /* Mantém a proporção da imagem */
+    width: 350px; 
+    height: auto; 
     display: block;
-    margin-bottom: 10px; /* Espaço abaixo do gráfico */
+    margin-bottom: 10px; 
 }
 
 .grafico-texto {
     font-size: 16px;
     color: #555;
-    max-width: 100%; /* Permite que o texto ocupe o restante do espaço */
-    flex-grow: 1; /* Faz o texto ocupar o restante do espaço disponível */
-    line-height: 1.6; /* Melhora a legibilidade do texto */
+    max-width: 100%; 
+    flex-grow: 1; 
+    line-height: 1.6; 
 }
 
-/* Estilo para os vídeos */
 .videos-container {
     display: flex;
-    justify-content: space-between; /* Espaçamento igual entre os vídeos */
-    gap: 20px; /* Espaçamento entre os vídeos igual ao espaço entre as divs */
-    flex-wrap: wrap; /* Permite que os vídeos quebrem linha se necessário */
+    justify-content: space-between; 
+    gap: 20px; 
+    flex-wrap: wrap; 
     margin-top: 20px;
 }
 
 .video-item {
-    flex: 1 1 45%; /* Os vídeos vão ocupar 45% da largura, com flexibilidade */
-    max-width: 560px; /* Garante que o tamanho máximo dos vídeos seja 560px */
+    flex: 1 1 45%; 
+    max-width: 560px; 
 }
 
 iframe {
-    width: 100%; /* Faz com que os vídeos ocupem 100% da largura da div */
+    width: 100%; 
     height: 315px;
 }
 
-/* Rodapé */
 footer {
     text-align: center;
     padding: 10px;
-    background-color: #43a047; /* Verde escuro */
+    background-color: #43a047; 
     color: #fff;
-    position: fixed; /* Fixa o rodapé na posição desejada */
-    bottom: 0; /* Alinha na parte inferior da janela */
-    left: 0; /* Garante que fique alinhado à esquerda */
-    width: 100%; /* Ocupa toda a largura da janela */
-    z-index: 1000; /* Mantém o rodapé acima de outros elementos */
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Sombra opcional para destaque */
+    position: fixed; 
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+    z-index: 1000; 
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); 
 }
 
-/* Estilo das tabelas */
 table {
-    width: 100%; /* Faz com que a tabela ocupe toda a largura do contêiner */
-    border-collapse: collapse; /* Remove espaços entre bordas */
+    width: 100%; 
+    border-collapse: collapse; 
     margin: 20px 0;
 }
 
 table th, table td {
-    border: 1px solid #c8e6c9; /* Borda verde claro */
+    border: 1px solid #c8e6c9; 
     padding: 10px;
     text-align: left;
-    width: 50%; /* Garante que as colunas ocupem metade da tabela */
 }
 
 table th {
-    background-color: #43a047; /* Fundo verde escuro */
+    background-color: #43a047; 
     color: #fff;
 }
 
 table tr:nth-child(even) {
-    background-color: #f1f8e9; /* Fundo verde claro para linhas pares */
+    background-color: #f1f8e9; 
 }
 
 table tr:hover {
-    background-color: #c8e6c9; /* Destaque ao passar o mouse */
+    background-color: #c8e6c9; 
 }
 
-/* Controles de acessibilidade */
-#acessibilidade-controles {
-    position: fixed;
-    top: 10px; /* Margem superior */
-    right: 10px; /* Margem direita */
-    display: flex;
-    gap: 10px; /* Espaço entre os botões */
-}
-
-#acessibilidade-controles button {
-    background-color: #43a047; /* Verde escuro */
-    color: #fff; /* Cor do texto */
-    border: none; /* Remove bordas */
-    padding: 10px 15px; /* Espaçamento interno */
-    border-radius: 5px; /* Bordas arredondadas */
-    cursor: pointer; /* Cursor de mão */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra */
-    font-size: 16px; /* Tamanho do texto no botão */
-    transition: background-color 0.3s ease; /* Transição suave */
-}
-
-#acessibilidade-controles button:hover {
-    background-color: #2e7d32; /* Cor ao passar o mouse */
-}
-
-/* Estilo para o formulário */
 form {
     margin-top: 20px;
 }
@@ -197,13 +276,13 @@ label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-    color: #2e7d32; /* Verde escuro */
+    color: #2e7d32; 
 }
 
 input, textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid #c8e6c9; /* Borda verde claro */
+    border: 1px solid #c8e6c9; 
     border-radius: 5px;
     font-size: 16px;
     background-color: #f9f9f9;
@@ -213,15 +292,15 @@ input, textarea {
 
 input:focus, textarea:focus {
     outline: none;
-    box-shadow: 0 0 5px rgba(67, 160, 71, 0.8); /* Destaque ao focar */
+    box-shadow: 0 0 5px rgba(67, 160, 71, 0.8); 
 }
 
 textarea {
-    resize: none; /* Remove o redimensionamento */
+    resize: none; 
 }
 
 button[type="submit"] {
-    background-color: #43a047; /* Verde escuro */
+    background-color: #43a047; 
     color: #fff;
     border: none;
     padding: 10px 15px;
@@ -232,5 +311,5 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: #2e7d32; /* Verde mais escuro ao passar o mouse */
+    background-color: #2e7d32; 
 }
