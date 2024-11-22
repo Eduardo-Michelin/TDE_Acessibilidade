@@ -108,49 +108,50 @@ nav ul li a:hover {
     background-color: #2e7d32; 
 }
 
+/* Opções de daltonismo com texto colorido */
 .opcao-1 {
-    background-color: #ffffff; 
-    color: #000000; 
+    background-color: #ffffff; /* Fundo branco */
+    color: #000000; /* Texto preto */
 }
 
 .opcao-1 a {
-    color: #00796b; 
+    color: #00796b; /* Cor de link verde escuro */
 }
 
 .opcao-2 {
-    background-color: #1565c0; 
-    color: #ffffff; 
+    background-color: #1565c0; /* Fundo azul escuro */
+    color: #ffeb3b; /* Texto amarelo */
 }
 
 .opcao-2 a {
-    color: #ffeb3b; 
+    color: #ffeb3b; /* Cor de link amarelo */
 }
 
 .opcao-3 {
-    background-color: #388e3c; 
-    color: #ffffff; 
+    background-color: #388e3c; /* Fundo verde escuro */
+    color: #f44336; /* Texto vermelho */
 }
 
 .opcao-3 a {
-    color: #ffeb3b; 
+    color: #ffeb3b; /* Cor de link amarelo */
 }
 
 .opcao-4 {
-    background-color: #fbc02d; 
-    color: #000000; 
+    background-color: #fbc02d; /* Fundo amarelo */
+    color: #1976d2; /* Texto azul escuro */
 }
 
 .opcao-4 a {
-    color: #d32f2f; 
+    color: #d32f2f; /* Cor de link vermelho */
 }
 
 .opcao-5 {
-    background-color: #000000; 
-    color: #ffffff; 
+    background-color: #000000; /* Fundo preto */
+    color: #4caf50; /* Texto verde */
 }
 
 .opcao-5 a {
-    color: #ffeb3b; 
+    color: #ffeb3b; /* Cor de link amarelo */
 }
 
 main {
